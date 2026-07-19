@@ -1,0 +1,24 @@
+{
+  "name": "BetterGoogle",
+  "description": "Make Google slightly less shittier",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_icon": "assets/favicon.png"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "content_scripts": [{
+    "matches": [
+      "*://www.google.com/*",
+      "*://google.com/*"
+    ],
+    "js": ["scripts/content.js"]
+  }],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "bettergoogle@blahaj.tr",
+      "strict_min_version": "109.0"
+    }
+  }
+} 
